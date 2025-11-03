@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             dgvVentas = new DataGridView();
+            colMozos = new DataGridViewTextBoxColumn();
+            colComidas = new DataGridViewTextBoxColumn();
+            colBebidasSinAlcohol = new DataGridViewTextBoxColumn();
+            colBebidasConAlcohol = new DataGridViewTextBoxColumn();
+            colPostres = new DataGridViewTextBoxColumn();
             lblGestiondeVentas = new Label();
             btnValidar = new Button();
             btnMozoDia = new Button();
@@ -37,11 +42,6 @@
             txtTotalGeneral = new TextBox();
             txtMozoDia = new TextBox();
             txtImporteMozo = new TextBox();
-            colMozos = new DataGridViewTextBoxColumn();
-            colComidas = new DataGridViewTextBoxColumn();
-            colBebidasSinAlcohol = new DataGridViewTextBoxColumn();
-            colBebidasConAlcohol = new DataGridViewTextBoxColumn();
-            colPostres = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvVentas).BeginInit();
             SuspendLayout();
             // 
@@ -55,6 +55,31 @@
             dgvVentas.RowHeadersVisible = false;
             dgvVentas.Size = new Size(545, 207);
             dgvVentas.TabIndex = 0;
+            // 
+            // colMozos
+            // 
+            colMozos.HeaderText = "Mozos";
+            colMozos.Name = "colMozos";
+            // 
+            // colComidas
+            // 
+            colComidas.HeaderText = "Comidas";
+            colComidas.Name = "colComidas";
+            // 
+            // colBebidasSinAlcohol
+            // 
+            colBebidasSinAlcohol.HeaderText = "Bebidas sin Alcohol";
+            colBebidasSinAlcohol.Name = "colBebidasSinAlcohol";
+            // 
+            // colBebidasConAlcohol
+            // 
+            colBebidasConAlcohol.HeaderText = "Bebidas con Alcohol";
+            colBebidasConAlcohol.Name = "colBebidasConAlcohol";
+            // 
+            // colPostres
+            // 
+            colPostres.HeaderText = "Postres";
+            colPostres.Name = "colPostres";
             // 
             // lblGestiondeVentas
             // 
@@ -127,31 +152,6 @@
             txtImporteMozo.Size = new Size(55, 23);
             txtImporteMozo.TabIndex = 8;
             // 
-            // colMozos
-            // 
-            colMozos.HeaderText = "Mozos";
-            colMozos.Name = "colMozos";
-            // 
-            // colComidas
-            // 
-            colComidas.HeaderText = "Comidas";
-            colComidas.Name = "colComidas";
-            // 
-            // colBebidasSinAlcohol
-            // 
-            colBebidasSinAlcohol.HeaderText = "Bebidas sin Alcohol";
-            colBebidasSinAlcohol.Name = "colBebidasSinAlcohol";
-            // 
-            // colBebidasConAlcohol
-            // 
-            colBebidasConAlcohol.HeaderText = "Bebidas con Alcohol";
-            colBebidasConAlcohol.Name = "colBebidasConAlcohol";
-            // 
-            // colPostres
-            // 
-            colPostres.HeaderText = "Postres";
-            colPostres.Name = "colPostres";
-            // 
             // frmVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -167,6 +167,7 @@
             Controls.Add(lblGestiondeVentas);
             Controls.Add(dgvVentas);
             Name = "frmVentas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ventas";
             Load += frmVentas_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();

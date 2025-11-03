@@ -17,10 +17,11 @@ namespace pryVillagraSP4
         {
             
             dgvVentas.Rows.Clear();         
-            dgvVentas.Rows.Add(mozos.Length);         
+            //dgvVentas.Rows.Add(mozos.Length);         
             for (int i = 0; i < mozos.Length; i++)
-                dgvVentas.Rows[i].HeaderCell.Value = mozos[i];
-            
+            //    dgvVentas.Rows[i].HeaderCell.Value = mozos[i];
+                dgvVentas.Rows.Add(mozos[i]);
+
             dgvVentas.RowHeadersWidth = 100;
             dgvVentas.AllowUserToAddRows = false;
             dgvVentas.AllowUserToDeleteRows = false;
@@ -29,7 +30,7 @@ namespace pryVillagraSP4
             dgvVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // Desactivar los botones hasta validar
-            btnMozoDia.Enabled = false;
+            btnMozoDia.Enabled = true;
             btnTotales.Enabled = false;
         }
 
@@ -38,11 +39,11 @@ namespace pryVillagraSP4
 
             try
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 1; i < 5; i++)
                 {
-                    for (int j = 0; j < 4; j++)
+                    for (int j = 1; j < 4; j++)
                     {
-                        string valor = Convert.ToString(dgvVentas.Rows[i].Cells[j].Value);
+                        string valor = dgvVentas.Rows[i].Cells[j].Value.ToString();
                         if (float.TryParse(valor, out float importe))
                             ventas[i, j] = importe;
                         else
